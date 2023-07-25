@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <style type="text/css">
+        /*"      color: #02edae;   "*/
+        
+        body{
+            background-color: #2f313a;
+            color: #02edae;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1{
+            color: #02edae;
+            font-size: 100px;
+            text-align: center;
+        }
+
+        .secondContainer{
+            text-align: center;
+        }
+        
+
+        li{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .thirdContainer{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: flex-start;
+            text-align: center;
+        }
+
+        #textInput{
+            font-size: 20px;
+            text-align: center;
+            height: 40px;
+            flex-grow: 1;
+            margin-right: 5px;
+        }
+
+        #buttonAdd{
+            width: 80px;
+        }
+
+        .liChanges{
+            flex-grow: 1;
+            margin-top: 10px;
+            font-size: 23px;
+            height: 30px;
+            margin-right: 30px;
+            margin-left: 30px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            padding: 10px; 
+        }
+        .trashChanges{
+            margin-top: 25px;
+            margin-right: 25px;
+        }
+        
+        .circleChanges{
+            margin-top: 27px;
+        }
+
+        .circleRed{color: red;}
+        .circleGreen{color: #02edae;}
+
+    </style>
+
+</head>
+<body>
+    <div class="secondContainer">
+    <h1 id="clock">SSS</h1>
+</div>
+
+<div class="thirdContainer">
+    <input type="text" placeholder="Eklemek istediğiniz ürünü yazınız" id="textInput">
+    <input type="button" value="Ekle" id="buttonAdd">
+</div>
+
+<div class="container">
+    <ul type="none" id="listUl"></ul>
+</div>
+    <script>
+        
+        window.addEventListener("DOMContentLoaded", (event) => {
+            
+            const textInput = document.querySelector("#textInput");
+            const buttonAdd = document.querySelector("#buttonAdd");
+            const listUl = document.querySelector("#listUl")
+            
+            function saat(){
+                let now = new Date();
+                let mins = now.getMinutes();
+                
+                mins = mins < 10 ? "0" + mins: mins;
+                time = now.getHours() + ":" + mins;
+                
+                document.querySelector("#clock").innerHTML = time;
+                
+                setTimeout(saat, 1000)
+            }
+            saat();
+            
+            buttonAdd.addEventListener("click", () =>{
+                const createElementLi = document.createElement("li");
+                const createElementCircle = document.createElement("span");
+                const createElementSpan = document.createElement("span");
+                const createElementTrash = document.createElement("span");
+
+                createElementCircle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                <circle cx="8" cy="8" r="8"/>
+                </svg>`
+
+                createElementTrash.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                </svg>`
+                
+                if(textInput.value == ""){
+                    alert("Lütfen bir ürün giriniz")
+                    return;
+                }else if (textInput.value == " "){
+                    alert("Lütfen bir ürün giriniz")
+                    return;
+                }
+
+                createElementCircle.classList.add("circleGreen")
+
+                createElementLi.addEventListener("click", () => {
+                    if(createElementCircle.classList.contains("circleGreen")){
+                        createElementCircle.classList.add("circleRed")
+                        createElementCircle.classList.remove("circleGreen")
+                    }else if(createElementCircle.classList.contains("circleRed")){
+                        createElementCircle.classList.add("circleGreen")
+                        createElementCircle.classList.remove("circleRed")
+                    }
+                })
+                
+                
+                createElementTrash.addEventListener("click", ()=> {
+                    createElementLi.remove()
+                })
+                
+                createElementSpan.classList.add("liChanges")
+                createElementTrash.classList.add("trashChanges");
+                createElementCircle.classList.add("circleChanges")
+                
+                createElementSpan.innerHTML = `${textInput.value}`
+            
+            
+
+
+            createElementLi.appendChild(createElementCircle);
+            createElementLi.appendChild(createElementSpan);
+            createElementLi.appendChild(createElementTrash);
+            listUl.append(createElementLi);
+            textInput.value = "";
+            })            
+        })
+    </script>
+</body>
+</html>
