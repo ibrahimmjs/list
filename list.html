@@ -3,106 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste</title>
+    
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <style type="text/css">
-        /*"      color: #02edae;   "*/
         
-        body{
-            background-color: #2f313a;
+            body{
+                background-color: #2f313a;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            #todo{
+                padding-top: 30px;
+                text-align: center;
+                color: #00f9b6;
+                letter-spacing: 10px;
+            }
+      
+            #todoDiv{
+                margin-top: -19px;
+                margin-left: -18px;
+                height: 10vh;
+                width: 210vh;
+                background-color: #262831;    
+            }
+            
+            #clock{
             color: #02edae;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        h1{
-            color: #02edae;
-            font-size: 100px;
+            font-size: 50px;
             text-align: center;
-        }
-
-        .secondContainer{
-            text-align: center;
-        }
-        
-
-        li{
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .thirdContainer{
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: flex-start;
-            text-align: center;
-        }
-
-        #textInput{
+            }
+            
+            #textInput{
             font-size: 20px;
             text-align: center;
-            height: 40px;
-            flex-grow: 1;
-            margin-right: 5px;
-        }
+            height: 8vh;
+            width: 194vh;
+            }
 
-        #buttonAdd{
-            width: 80px;
+            #buttonAdd{
+            height: 8.6vh;
+            width: 12vh;
             background-color: #02edae;
             color: black;
-            border-color: #02edae;
-            font-size: 20px;
-        }
+            border: 0;
+            font-size: 15px;
+            }
 
-        .liChanges{
-            flex-grow: 1;
-            margin-top: 10px;
+            #inputDiv{
+                padding: 0;
+                bottom: 0px;
+                position: fixed;
+            }
+
+            .liChanges{
+            margin-bottom: 25px;
+            display: inline-block;
+            width: 130vh;
+            text-align: center;
             font-size: 23px;
             height: 30px;
-            margin-right: 30px;
-            margin-left: 30px;
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            padding: 10px; 
-        }
-        .trashChanges{
+            padding: 10px;
+            border-radius: 10px;
+            color: #6d6c6e;
+            }
+
+            .trashChanges{
+            color: #02edae;
             margin-top: 25px;
             margin-right: 25px;
         }
-        
-        .circleChanges{
+
+            .circleChanges{
             margin-top: 27px;
         }
 
         .circleRed{color: red;}
         .circleGreen{color: #02edae;}
 
-    </style>
+            li{
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            @media only screen and (max-width: 1200px) {
+            .liChanges{
+            width: 30vh;
+            }
+            #todo{
+                padding-top: 24px;
+                text-align: center;
+                color: #00f9b6;
+                font-size: 17px;
+                letter-spacing: 7px;
+            }
+            #todoDiv{
+                width: 137.5vh;    
+                height: 8.2vh;
+            }
+            #textInput{
+                margin-bottom: 0vh;
+                width: 107vh;
+                height: 56px;
+            }
+            #buttonAdd{
+                height: 65px;
+                width: 230px;
+            }}
+            @media only screen and (max-width: 900px) {
+            .liChanges{
+            width: 30vh;
+            }
 
+            #todoDiv{
+                width: 90.5vh;    
+            }
+            #textInput{
+                margin-bottom: 0vh;
+                width: 76vh;
+            }
+            #buttonAdd{
+                height: 70px;
+                width: 80px;
+            }
+            #clock{
+            font-size: 60px;
+            }}
+
+            @media only screen and (max-width: 600px) {
+            .liChanges{
+            width: 30vh;
+            }
+
+            #todoDiv{
+                width: 46vh;    
+            }
+            #textInput{
+                margin-bottom: 0vh;
+                width: 44vh;
+            }
+            #buttonAdd{
+                height: 45px;
+                width: 50px;
+            }
+            #clock{
+            font-size: 60px;
+            }}
+            
+            @media only screen and (max-width: 500px) {
+            .liChanges{
+            width: 30vh;
+            }
+            #todoDiv{
+                width: 47.8vh;    
+            }
+            #textInput{
+                margin-bottom: 0;
+                width: 35vh;
+            }
+
+                #buttonAdd{
+                height: 75px;
+                width: 75px;
+            }
+            #clock{
+            font-size: 50px;
+            }}
+            @media only screen and (max-width: 375px) {
+            .liChanges{
+            width: 30vh;
+            }
+            #todoDiv{
+                width: 57.5vh;
+                height: 12vh;    
+            }
+            #textInput{
+                margin-bottom: 0vh;
+                width: 44vh;
+            }
+            #buttonAdd{
+                height: 45px;
+                width: 50px;
+            }#clock{
+            font-size: 40px;
+            }}
+            @media only screen and (max-width: 360px) {
+            .liChanges{
+            width: 30vh;
+            }
+            #todoDiv{
+                width: 46.3vh;
+                height: 12vh;    
+            }
+            #textInput{
+                width: 30vh;
+                margin-bottom: 0;
+            }
+            #buttonAdd{
+                font-size: 20px;
+                width: 52px;
+            }}
+
+    </style>
 </head>
 <body>
-    <div class="secondContainer">
-    <h1 id="clock">SSS</h1>
+    <div id="todoDiv">
+    <h3 id="todo">JUST TODO IT</h3>
 </div>
 
-<div class="thirdContainer">
-    <input type="text" placeholder="Eklemek istediğiniz ürünü yazınız" id="textInput">
-    <input type="button" value="Ekle" id="buttonAdd">
-</div>
+<h1 id="clock"></h1>
 
 <div class="container">
     <ul type="none" id="listUl"></ul>
 </div>
-    <script>
-        
-        window.addEventListener("DOMContentLoaded", (event) => {
-            
-            const textInput = document.querySelector("#textInput");
-            const buttonAdd = document.querySelector("#buttonAdd");
-            const listUl = document.querySelector("#listUl")
-            
-            function saat(){
+
+    <div id="inputDiv">
+        <input type="text" placeholder="Eklemek istediğiniz ürünü yazınız" id="textInput">
+        <input type="button" value="Ekle" id="buttonAdd">
+    </div>
+
+<script>
+    window.addEventListener("DOMContentLoaded", (event) => {
+        const textInput = document.querySelector("#textInput");
+        const buttonAdd = document.querySelector("#buttonAdd");
+        const listUl = document.querySelector("#listUl");
+
+        function saat(){
                 let now = new Date();
                 let mins = now.getMinutes();
                 
@@ -111,16 +239,25 @@
                 
                 document.querySelector("#clock").innerHTML = time;
                 
+              /*  let sec = now.getSeconds();
+                let kalan = (60 - sec)
+                let sonuc = (kalan + sec)
+
+                if(sec < 60){
+                    setTimeout(saat, 1000)
+                } else if (sec == 60){
+                    console.log("Saniye = 60");
+                    setTimeout(saat, 60000)
+                }*/
                 setTimeout(saat, 1000)
-            }
-            saat();
-            
+            }saat();
+
             buttonAdd.addEventListener("click", () =>{
                 const createElementLi = document.createElement("li");
                 const createElementCircle = document.createElement("span");
                 const createElementSpan = document.createElement("span");
                 const createElementTrash = document.createElement("span");
-
+            
                 createElementCircle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
                 <circle cx="8" cy="8" r="8"/>
                 </svg>`
@@ -153,23 +290,19 @@
                 createElementTrash.addEventListener("click", ()=> {
                     createElementLi.remove()
                 })
-                
-                createElementSpan.classList.add("liChanges")
+
+                createElementSpan.classList.add("liChanges");
                 createElementTrash.classList.add("trashChanges");
-                createElementCircle.classList.add("circleChanges")
-                
-                createElementSpan.innerHTML = `${textInput.value}`
+                createElementCircle.classList.add("circleChanges");
+                createElementSpan.innerHTML = textInput.value
             
-            
-
-
             createElementLi.appendChild(createElementCircle);
             createElementLi.appendChild(createElementSpan);
             createElementLi.appendChild(createElementTrash);
             listUl.append(createElementLi);
             textInput.value = "";
-            })            
+            })
         })
-    </script>
+</script>
 </body>
 </html>
