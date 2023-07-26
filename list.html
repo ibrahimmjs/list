@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,11 +57,10 @@
                 position: fixed;
             }
 
-            .liChanges{
+            .liChanges2{
             margin-bottom: 25px;
             display: inline-block;
-            width: 130vh;
-            text-align: center;
+            width: 120vh;
             font-size: 23px;
             height: 30px;
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -73,11 +71,11 @@
 
             .trashChanges{
             color: #02edae;
-            margin-top: 25px;
-            margin-right: 25px;
+            text-align: right;            
         }
 
             .circleChanges{
+            margin-right: 25px;
             margin-top: 27px;
         }
 
@@ -85,12 +83,14 @@
         .circleGreen{color: #02edae;}
 
             li{
-                text-align: center;
+                margin-right: 40px;
                 margin-bottom: 30px;
             }
+            
             @media only screen and (max-width: 1200px) {
             .liChanges{
-            width: 30vh;
+                
+            width: 95vh;
             }
             #todo{
                 padding-top: 24px;
@@ -131,7 +131,6 @@
             #clock{
             font-size: 60px;
             }}
-
             @media only screen and (max-width: 600px) {
             .liChanges{
             width: 30vh;
@@ -150,8 +149,7 @@
             }
             #clock{
             font-size: 60px;
-            }}
-            
+            }}          
             @media only screen and (max-width: 500px) {
             .liChanges{
             width: 30vh;
@@ -275,7 +273,7 @@
                 }
 
                 createElementCircle.classList.add("circleGreen")
-
+                createElementLi.classList.add("liChanges2")
                 createElementLi.addEventListener("click", () => {
                     if(createElementCircle.classList.contains("circleGreen")){
                         createElementCircle.classList.add("circleRed")
@@ -286,14 +284,13 @@
                     }
                 })
                 
-                
                 createElementTrash.addEventListener("click", ()=> {
                     createElementLi.remove()
                 })
-
                 createElementSpan.classList.add("liChanges");
                 createElementTrash.classList.add("trashChanges");
                 createElementCircle.classList.add("circleChanges");
+                
                 createElementSpan.innerHTML = textInput.value
             
             createElementLi.appendChild(createElementCircle);
