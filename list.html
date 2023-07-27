@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="todoapp.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <style>
+    <style type="text/css">
         *{
             padding: 0;
             margin: 0;
         }
-
         #justTodoIt{
             padding-top: 20px;
             text-align: center;
@@ -24,20 +23,15 @@
             line-height: 21px;
             color: #06d29c;
         }
-
         #todoDiv{
             width: 100%;
             height: 65px;
-            background-color: #262831;
         }
-
         #mainDiv{
-            height: 100vh;
+            height: 100%;
             width: 50%;
             margin: 0px auto;
-            background-color: #2b2e36;
         }
-
         #clock{
             padding-top: 20px;
             font-family: Roboto;
@@ -47,28 +41,31 @@
             line-height: 55px;
             text-align: center;
             color: #00f9b6;
-            padding-top: 9vh;
-            
+            padding-top: 9vh;   
         }
-
         .liSettings{
-            text-align: center;
-            margin-bottom: 25px;
-            display: inline-block;
-            width: 50%;
-            font-size: 23px;
-            height: 30px;
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            align-items: center;
+            margin-right: 20%;
+            margin-left: 20%;
+            margin-bottom: 7%;
+            font-size: 18px;
+            height: 45px;
+            box-shadow: rgba(76, 77, 78, 0.9) 0px 0px 1px 1px,rgba(0, 0, 0, 0.4) 0px 2px 4px;
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 15px;
             color: #6d6c6e;
             }
-
         .ulDiv{
             margin-top: 10%;
             text-align: center;
         }
-
         #date{
             font-family: Roboto;
             font-style: normal;
@@ -77,12 +74,10 @@
             text-align: center;
             font-size: 15px;
         }
-
-        
         body{
             height: 100%;
+            background-color: #262831;
         }
-        
         #inputDiv{
             display: flex;
             width: 100%;
@@ -91,25 +86,28 @@
             bottom: 0;
             position: fixed;
         }
-        
         #inputText{
             width: 40%;
             border: none;
             text-align: center;
         }
-
         #inputButton{
             width: 10%;
             border: none;
             background-color: #00f9b6;
         }
-
         .trashChanges{
             color: #02edae;
         }
-
         .circleRed{color: red;}
         .circleGreen{color: #02edae;}
+
+        @media only screen and (max-width: 1200px) {#inputText {width: 50%; border: none;} #inputButton {width: 30%; border: none; background-color: #00f9b6;} }
+        @media only screen and (max-width: 1000px) {}
+        @media only screen and (max-width: 800px) {}
+        @media only screen and (max-width: 600px) {}
+        @media only screen and (max-width: 400px) {}
+        @media only screen and (max-width: 200px) {}
 
     </style>
 </head>
@@ -199,7 +197,7 @@
                 createElementSpan.classList.add("liChanges");
                 createElementTrash.classList.add("trashChanges");
                 createElementCircle.classList.add("circleChanges");
-                
+                createElementLi.classList.add("liCenter")
                 createElementSpan.innerHTML = inputText.value
             
             createElementLi.appendChild(createElementCircle);
