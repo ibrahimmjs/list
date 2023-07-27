@@ -3,64 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <style type="text/css">
-        
-            body{
-                background-color: #2f313a;
-                font-family: 'Roboto', sans-serif;
-            }
+    <title>todo list 3</title>
+    <link rel="stylesheet" href="todoapp.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
 
-            #todo{
-                padding-top: 30px;
-                text-align: center;
-                color: #00f9b6;
-                letter-spacing: 10px;
-            }
-      
-            #todoDiv{
-                margin-top: -19px;
-                margin-left: -18px;
-                height: 10vh;
-                width: 210vh;
-                background-color: #262831;    
-            }
-            
-            #clock{
-            color: #02edae;
-            font-size: 50px;
+        #justTodoIt{
+            padding-top: 20px;
             text-align: center;
-            }
-            
-            #textInput{
-            font-size: 20px;
+            font-family: Roboto;
+            letter-spacing: 7px;
+            width: inherit;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 21px;
+            color: #06d29c;
+        }
+
+        #todoDiv{
+            width: 100%;
+            height: 65px;
+            background-color: #262831;
+        }
+
+        #mainDiv{
+            height: 100vh;
+            width: 50%;
+            margin: 0px auto;
+            background-color: #2b2e36;
+        }
+
+        #clock{
+            padding-top: 20px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 200;
+            font-size: 55px;
+            line-height: 55px;
             text-align: center;
-            height: 8vh;
-            width: 194vh;
-            }
+            color: #00f9b6;
+            padding-top: 9vh;
+            
+        }
 
-            #buttonAdd{
-            height: 8.6vh;
-            width: 12vh;
-            background-color: #02edae;
-            color: black;
-            border: 0;
-            font-size: 15px;
-            }
-
-            #inputDiv{
-                padding: 0;
-                bottom: 0px;
-                position: fixed;
-            }
-
-            .liChanges2{
+        .liSettings{
+            text-align: center;
             margin-bottom: 25px;
             display: inline-block;
-            width: 120vh;
+            width: 50%;
             font-size: 23px;
             height: 30px;
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -69,164 +64,78 @@
             color: #6d6c6e;
             }
 
-            .trashChanges{
-            color: #02edae;
-            text-align: right;            
+        .ulDiv{
+            margin-top: 10%;
+            text-align: center;
         }
 
-            .circleChanges{
-            margin-right: 25px;
-            margin-top: 27px;
+        #date{
+            font-family: Roboto;
+            font-style: normal;
+            line-height: 20px;
+            color: #636265;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        
+        body{
+            height: 100%;
+        }
+        
+        #inputDiv{
+            display: flex;
+            width: 100%;
+            bottom: 0px;
+            height: 56px;
+            bottom: 0;
+            position: fixed;
+        }
+        
+        #inputText{
+            width: 40%;
+            border: none;
+            text-align: center;
+        }
+
+        #inputButton{
+            width: 10%;
+            border: none;
+            background-color: #00f9b6;
+        }
+
+        .trashChanges{
+            color: #02edae;
         }
 
         .circleRed{color: red;}
         .circleGreen{color: #02edae;}
 
-            li{
-                margin-right: 40px;
-                margin-bottom: 30px;
-            }
-            
-            @media only screen and (max-width: 1200px) {
-            .liChanges{
-                
-            width: 95vh;
-            }
-            #todo{
-                padding-top: 24px;
-                text-align: center;
-                color: #00f9b6;
-                font-size: 17px;
-                letter-spacing: 7px;
-            }
-            #todoDiv{
-                width: 137.5vh;    
-                height: 8.2vh;
-            }
-            #textInput{
-                margin-bottom: 0vh;
-                width: 107vh;
-                height: 56px;
-            }
-            #buttonAdd{
-                height: 65px;
-                width: 230px;
-            }}
-            @media only screen and (max-width: 900px) {
-            .liChanges{
-            width: 30vh;
-            }
-
-            #todoDiv{
-                width: 90.5vh;    
-            }
-            #textInput{
-                margin-bottom: 0vh;
-                width: 76vh;
-            }
-            #buttonAdd{
-                height: 70px;
-                width: 80px;
-            }
-            #clock{
-            font-size: 60px;
-            }}
-            @media only screen and (max-width: 600px) {
-            .liChanges{
-            width: 30vh;
-            }
-
-            #todoDiv{
-                width: 46vh;    
-            }
-            #textInput{
-                margin-bottom: 0vh;
-                width: 44vh;
-            }
-            #buttonAdd{
-                height: 45px;
-                width: 50px;
-            }
-            #clock{
-            font-size: 60px;
-            }}          
-            @media only screen and (max-width: 500px) {
-            .liChanges{
-            width: 30vh;
-            }
-            #todoDiv{
-                width: 47.8vh;    
-            }
-            #textInput{
-                margin-bottom: 0;
-                width: 35vh;
-            }
-
-                #buttonAdd{
-                height: 75px;
-                width: 75px;
-            }
-            #clock{
-            font-size: 50px;
-            }}
-            @media only screen and (max-width: 375px) {
-            .liChanges{
-            width: 30vh;
-            }
-            #todoDiv{
-                width: 57.5vh;
-                height: 12vh;    
-            }
-            #textInput{
-                margin-bottom: 0vh;
-                width: 44vh;
-            }
-            #buttonAdd{
-                height: 45px;
-                width: 50px;
-            }#clock{
-            font-size: 40px;
-            }}
-            @media only screen and (max-width: 360px) {
-            .liChanges{
-            width: 30vh;
-            }
-            #todoDiv{
-                width: 46.3vh;
-                height: 12vh;    
-            }
-            #textInput{
-                width: 30vh;
-                margin-bottom: 0;
-            }
-            #buttonAdd{
-                font-size: 20px;
-                width: 52px;
-            }}
-
     </style>
 </head>
 <body>
-    <div id="todoDiv">
-    <h3 id="todo">JUST TODO IT</h3>
-</div>
+    <div id="mainDiv">
 
-<h1 id="clock"></h1>
-
-<div class="container">
-    <ul type="none" id="listUl"></ul>
-</div>
-
-    <div id="inputDiv">
-        <input type="text" placeholder="Eklemek istediğiniz ürünü yazınız" id="textInput">
-        <input type="button" value="Ekle" id="buttonAdd">
+        <div id="todoDiv">
+            <p id="justTodoIt"> JUST TODO IT</p>
+        </div>
+        <div id="container">
+            <div>
+                <p id="clock">saat</p>
+                <p id="date">tarih</p>
+            </div>
+            <div class="ulDiv">
+                <ul id="list"></ul> 
+            </div>
+            <div id="inputDiv">
+                <input type="text" placeholder="Lütfen bir ürün giriniz" id="inputText">
+                <input type="button" value="Ekle" id="inputButton">
+            </div>
+        </div>
     </div>
 
-<script>
-    window.addEventListener("DOMContentLoaded", (event) => {
-        const textInput = document.querySelector("#textInput");
-        const buttonAdd = document.querySelector("#buttonAdd");
-        const listUl = document.querySelector("#listUl");
+    <script>
+            window.addEventListener("DOMContentLoaded", (event) => {
 
         function saat(){
                 let now = new Date();
@@ -234,23 +143,21 @@
                 
                 mins = mins < 10 ? "0" + mins: mins;
                 time = now.getHours() + ":" + mins;
-                
-                document.querySelector("#clock").innerHTML = time;
-                
-              /*  let sec = now.getSeconds();
-                let kalan = (60 - sec)
-                let sonuc = (kalan + sec)
 
-                if(sec < 60){
-                    setTimeout(saat, 1000)
-                } else if (sec == 60){
-                    console.log("Saniye = 60");
-                    setTimeout(saat, 60000)
-                }*/
+                var months = [" Ocak", " Şubat", " Mart", " Nisan", " Mayıs", " Haziran", " Temmuz", " Ağustos", " Eylül", " Ekim", " Kasım", " Aralık"];
+                var days = [" Pazar", " Pazartesi", " Salı", " Çarşamba", " Perşembe", " Cuma", " Cumartesi"];
+                date = [now.getDate(), months[now.getMonth()], days[now.getDay()]];
+
+                document.querySelector("#clock").innerHTML = time;
+                document.querySelector("#date").innerHTML = date;
                 setTimeout(saat, 1000)
             }saat();
 
-            buttonAdd.addEventListener("click", () =>{
+            const inputText = document.querySelector("#inputText")
+            const inputButton = document.querySelector("#inputButton")
+            const list = document.querySelector("#list")
+
+            inputButton.addEventListener("click", () =>{
                 const createElementLi = document.createElement("li");
                 const createElementCircle = document.createElement("span");
                 const createElementSpan = document.createElement("span");
@@ -260,27 +167,29 @@
                 <circle cx="8" cy="8" r="8"/>
                 </svg>`
 
-                createElementTrash.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
-                <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                createElementTrash.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
                 </svg>`
-                
-                if(textInput.value == ""){
+
+                console.log("basıldı");
+
+                if(inputText.value == ""){
                     alert("Lütfen bir ürün giriniz")
                     return;
-                }else if (textInput.value == " "){
+                }else if (inputText.value == " "){
                     alert("Lütfen bir ürün giriniz")
                     return;
                 }
 
-                createElementCircle.classList.add("circleGreen")
-                createElementLi.classList.add("liChanges2")
+                createElementCircle.classList.add("circleRed")
+                createElementLi.classList.add("liSettings")
                 createElementLi.addEventListener("click", () => {
-                    if(createElementCircle.classList.contains("circleGreen")){
-                        createElementCircle.classList.add("circleRed")
-                        createElementCircle.classList.remove("circleGreen")
-                    }else if(createElementCircle.classList.contains("circleRed")){
+                    if(createElementCircle.classList.contains("circleRed")){
                         createElementCircle.classList.add("circleGreen")
                         createElementCircle.classList.remove("circleRed")
+                    }else if(createElementCircle.classList.contains("circleGreen")){
+                        createElementCircle.classList.add("circleRed")
+                        createElementCircle.classList.remove("circleGreen")
                     }
                 })
                 
@@ -291,15 +200,17 @@
                 createElementTrash.classList.add("trashChanges");
                 createElementCircle.classList.add("circleChanges");
                 
-                createElementSpan.innerHTML = textInput.value
+                createElementSpan.innerHTML = inputText.value
             
             createElementLi.appendChild(createElementCircle);
             createElementLi.appendChild(createElementSpan);
             createElementLi.appendChild(createElementTrash);
-            listUl.append(createElementLi);
-            textInput.value = "";
+            list.append(createElementLi);
+            inputText.value = "";
+                
             })
+
         })
-</script>
+    </script>
 </body>
 </html>
